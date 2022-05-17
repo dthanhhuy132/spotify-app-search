@@ -1,3 +1,4 @@
+import "./tracks.css";
 import { useSelector } from "react-redux";
 
 export default function Tracks() {
@@ -7,7 +8,6 @@ export default function Tracks() {
 
   const tracksSlice =
     tracks?.items.length > 8 ? tracks?.items.slice(0, 8) : tracks?.items;
-
   console.log("tracksSlice trong tracks", tracksSlice);
 
   return (
@@ -15,17 +15,16 @@ export default function Tracks() {
       <div className="row">
         {tracksSlice ? (
           tracksSlice.map((track) => {
-            console.log(track);
-
             return (
               <div className="col col-6">
                 <div>
-                  <img src="" alt="" />
+                  <img src={""} alt="" />
                 </div>
                 <div>
-                  <p>Ten bai hat</p>
+                  <p>{track.name}</p>
                   <p>Ten tac gia</p>
                 </div>
+                <audio controls src={track.preview_url}></audio>
               </div>
             );
           })
