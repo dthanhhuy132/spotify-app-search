@@ -3,12 +3,10 @@ import Cookies from "js-cookie";
 
 const baseURL = "https://api.spotify.com";
 
-const TOKEN = Cookies.get("spotifyAuthToken");
-
 const axiosClient = axios.create({
   baseURL,
   headers: {
-    Authorization: "Bearer " + TOKEN,
+    Authorization: "Bearer " + Cookies.get("spotifyAuthToken"),
   },
 });
 

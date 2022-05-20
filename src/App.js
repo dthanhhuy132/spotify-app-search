@@ -14,8 +14,13 @@ import Dashboard from "./pages/Dashboard";
 import Homepage from "./pages/Homepage";
 
 function App() {
-  const [token, setToken] = useState(Cookies.get("spotifyAuthToken"));
   const navigate = useNavigate();
+  const [token, setToken] = useState(Cookies.get("spotifyAuthToken"));
+
+
+  // console.log('token trong app', token)
+
+
 
   useEffect(() => {
     navigate("/");

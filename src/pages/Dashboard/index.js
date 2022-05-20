@@ -12,8 +12,10 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <Header />
-      <Tracks />
-      <Artists />
+      <div className="container p-4">
+        <Artists />
+        <Tracks />
+      </div>
     </div>
   );
 }
