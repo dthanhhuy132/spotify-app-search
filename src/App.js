@@ -35,7 +35,7 @@ function App() {
       ) : (
         <div className="login">
           <SpotifyAuth
-            redirectUri="http://localhost:3000"
+            redirectUri={process.env.NEXTAUTH_URL}
             clientID={process.env.REACT_APP_CLIENT_ID}
             scopes={[Scopes.userReadPrivate, "user-read-email"]}
             onAccessToken={(token) => setToken(token)}
