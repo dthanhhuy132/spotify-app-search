@@ -36,7 +36,7 @@ function App() {
         <div className="login">
           <SpotifyAuth
             redirectUri="https://hd-spotify-app-search.vercel.app"
-            clientID="b64778bc8ee1462da13c211c2acb98a9"
+            clientID={process.env.REACT_APP_CLIENT_ID}
             scopes={[Scopes.userReadPrivate, "user-read-email"]}
             onAccessToken={(token) => setToken(token)}
           />
