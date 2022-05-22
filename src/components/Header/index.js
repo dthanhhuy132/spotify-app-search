@@ -13,7 +13,6 @@ export default function Header() {
   const location = useLocation();
   const initSearchString = queryString.parse(location.search).q;
   const [searchString, setSearchString] = useState(initSearchString);
-  const [isDispatch, setIsDispatch] = useState(false);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();

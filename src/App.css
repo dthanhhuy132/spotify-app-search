@@ -11,6 +11,10 @@ html {
   font-size: 62.5%;
 }
 
+.App {
+  height: 100vh;
+}
+
 .login {
   width: 100%;
   display: flex;
@@ -45,4 +49,26 @@ html {
 .login button svg {
   width: 70px;
   height: 70px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f2f2f255;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(199, 199, 199);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
 }

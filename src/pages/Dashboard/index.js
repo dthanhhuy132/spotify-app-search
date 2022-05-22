@@ -12,7 +12,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <Header />
-      <div className="container p-4">
+      <div className="container px-4 dashboard-content">
         <Artists />
         <Tracks />
       </div>

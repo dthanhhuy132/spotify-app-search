@@ -17,10 +17,7 @@ function App() {
   const navigate = useNavigate();
   const [token, setToken] = useState(Cookies.get("spotifyAuthToken"));
 
-
   // console.log('token trong app', token)
-
-
 
   useEffect(() => {
     navigate("/");

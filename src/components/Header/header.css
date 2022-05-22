@@ -5,10 +5,14 @@
   gap: 60px;
 
   padding: 20px;
-  position: relative;
+  position: sticky;
+  width: 1024px;
+  top: 0;
+  z-index: 10;
 
   text-align: center;
   margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .header__search {
