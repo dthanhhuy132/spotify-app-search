@@ -1,5 +1,6 @@
 import "react-spotify-auth/dist/index.css";
 import "animate.css";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 import { useEffect, useState } from "react";
@@ -12,24 +13,28 @@ import Background from "./components/Background";
 import Dashboard from "./pages/Dashboard";
 
 import Homepage from "./pages/Homepage";
+import TopTrack from "./pages/TopTrack";
 
 function App() {
   const navigate = useNavigate();
-  const [token, setToken] = useState(Cookies.get("spotifyAuthToken"));
-
-  // console.log('token trong app', token)
+  const [token, setToken] = useState(localStorage.getItem("spotifyAuthToken"));
 
   useEffect(() => {
-    navigate("/");
+    if (token) {
+      setToken(localStorage.getItem("spotifyAuthToken"));
+      navigate("/");
+    }
   }, []);
 
   return (
     <div className="App">
+      <Background />
+
       {token ? (
-        <div className="animate__animated animate__backInDown">
+        <div>
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/search" element={<Dashboard />} />
+            <Route path="/search/*" element={<Dashboard />} />
           </Routes>
         </div>
       ) : (
@@ -37,13 +42,13 @@ function App() {
           <SpotifyAuth
             redirectUri="https://hd-spotify-app-search.vercel.app"
             clientID="b64778bc8ee1462da13c211c2acb98a9"
-            // scopes={[Scopes.userReadPrivate, "user-read-email"]}
+            scopes={[Scopes.userReadPrivate, "user-read-email"]}
             onAccessToken={(token) => setToken(token)}
+            localStorage={true}
+            noCookie={true}
           />
         </div>
       )}
-
-      <Background />
     </div>
   );
 }

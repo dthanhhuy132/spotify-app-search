@@ -27,8 +27,10 @@ export default function Homepage() {
     }
   }, [searchString]);
 
+  // window.location.reload();
+
   return (
-    <div className="homepage">
+    <div className="homepage animate__animated animate__backInDown">
       <div className="pt-5">
         <Logo />
       </div>

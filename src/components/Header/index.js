@@ -6,12 +6,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Logo from "../Logo";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getArtistAsync } from "../../store/artist/action";
-import { getTrackAsync } from "../../store/track/action";
+import { getArtistAsync, resetArtistListById } from "../../store/artist/action";
+import { getTrackAsync, resetTrack } from "../../store/track/action";
 
 export default function Header() {
   const location = useLocation();
   const initSearchString = queryString.parse(location.search).q;
+
   const [searchString, setSearchString] = useState(initSearchString);
 
   const navigate = useNavigate();
@@ -35,10 +36,16 @@ export default function Header() {
 
   useEffect(() => {
     if (initSearchString) {
+      dispatch(resetTrack());
+      dispatch(resetArtistListById());
       dispatch(getArtistAsync(initSearchString));
       dispatch(getTrackAsync(initSearchString));
     }
   }, [initSearchString]);
+
+  useEffect(() => {
+    if (location.pathname.indexOf("top-track") >= 0) setSearchString("");
+  }, []);
 
   return (
     <div className="header ">
@@ -56,8 +63,6 @@ export default function Header() {
 
         <i className="fa-solid fa-magnifying-glass header__search-icon"></i>
       </div>
-
-      {/* <button onClick={handleDispatch}>nhan vao day</button> */}
     </div>
   );
 }

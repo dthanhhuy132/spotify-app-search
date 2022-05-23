@@ -1,7 +1,8 @@
-import { GET_TRACK } from "./action";
+import { GET_TOP_TRACK, GET_TRACK, RESET_TRACK } from "./action";
 
 const initState = {
   tracks: [],
+  topTrack: [],
 };
 
 export default function TrackReducer(state = initState, action) {
@@ -10,6 +11,19 @@ export default function TrackReducer(state = initState, action) {
       return {
         ...state,
         tracks: action.payload,
+      };
+
+    case RESET_TRACK: {
+      return {
+        ...state,
+        tracks: [],
+      };
+    }
+
+    case GET_TOP_TRACK:
+      return {
+        ...state,
+        topTrack: action.payload,
       };
 
     default:
