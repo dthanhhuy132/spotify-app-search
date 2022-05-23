@@ -17,7 +17,10 @@ export default function ArtistItem({ artist, genreArr, handleClick }) {
           </div>
         </div>
         <div className="artist_image">
-          <img src={artist?.images[1]?.url || defaultAvatar} />
+          <img
+            src={artist?.images[1]?.url || defaultAvatar}
+            alt={artist?.name}
+          />
         </div>
       </div>
     </div>

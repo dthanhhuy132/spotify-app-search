@@ -6,14 +6,13 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 
-import Cookies from "js-cookie";
-import { SpotifyApiContext } from "react-spotify-api";
+// import Cookies from "js-cookie";
+// import { SpotifyApiContext } from "react-spotify-api";
 import { SpotifyAuth, Scopes } from "react-spotify-auth";
 import Background from "./components/Background";
 import Dashboard from "./pages/Dashboard";
 
 import Homepage from "./pages/Homepage";
-import TopTrack from "./pages/TopTrack";
 
 function App() {
   const navigate = useNavigate();
@@ -24,6 +23,7 @@ function App() {
       setToken(localStorage.getItem("spotifyAuthToken"));
       navigate("/");
     }
+    // eslint-disable-next-line
   }, []);
 
   return (

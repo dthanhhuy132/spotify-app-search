@@ -1,14 +1,13 @@
 import "./dashboard.css";
 
-import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 import Header from "../../components/Header";
 
 import SearchPage from "../SearchPage";
 import TopTrack from "../TopTrack";
-import RelativeArtist from "../RelativeArtist";
+// import RelativeArtist from "../RelativeArtist";
 
 export default function Dashboard() {
   return (

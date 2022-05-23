@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getArtistById, resetArtistListById } from "../../store/artist/action";
 
 import defautlAvatar from "../../assets/img/defaultAvatar.png";
 import Loading from "../Loading";
 
 export default function TrackArtistImgae({ artistId }) {
-  const artistById = useSelector((state) => state.Artists.artistById);
   const [artistInfo, setArtistInfo] = useState(null);
 
   const dispatch = useDispatch();
@@ -18,6 +17,7 @@ export default function TrackArtistImgae({ artistId }) {
     return () => {
       dispatch(resetArtistListById());
     };
+    // eslint-disable-next-line
   }, [artistId]);
 
   return (

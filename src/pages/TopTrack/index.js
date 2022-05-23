@@ -16,6 +16,7 @@ export default function TopTrack() {
 
   useEffect(() => {
     dispatch(getTopTrackAction(artistId));
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -1,8 +1,7 @@
 import "./artists.css";
 import { useSelector } from "react-redux";
 
-import defaultAvatar from "../../assets/img/defaultAvatar.png";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Loading from "../Loading";
 import ArtistItem from "./AtistItem";
 

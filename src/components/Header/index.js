@@ -32,6 +32,7 @@ export default function Header() {
       setSearchString("");
       navigate(`/search`);
     }
+    // eslint-disable-next-line
   }, [searchString]);
 
   useEffect(() => {
@@ -41,10 +42,12 @@ export default function Header() {
       dispatch(getArtistAsync(initSearchString));
       dispatch(getTrackAsync(initSearchString));
     }
+    // eslint-disable-next-line
   }, [initSearchString]);
 
   useEffect(() => {
     if (location.pathname.indexOf("top-track") >= 0) setSearchString("");
+    // eslint-disable-next-line
   }, []);
 
   return (
